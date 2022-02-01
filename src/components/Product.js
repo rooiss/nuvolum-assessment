@@ -16,12 +16,10 @@ export const Product = ({ item, setProduct, setOpen, open, selected }) => {
       <h4 className={classes.itemTitle} onClick={productHandler}>
         {item.title}
       </h4>
-      <div className={classes.chevronCircle}>
-        <div
-          className={selected ? classes.chevronRight : classes.chevronLeft}
-          onClick={productHandler}
-        />
-      </div>
+      <span
+        className={selected ? classes.chevronRight : classes.chevronLeft}
+        onClick={productHandler}
+      />
     </div>
   )
 }
