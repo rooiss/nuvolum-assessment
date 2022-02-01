@@ -16,9 +16,12 @@ export const Products = () => {
         {products &&
           products.map((item) => {
             return (
-              <div key={item.id}>
-                <Product item={item} setProduct={setProduct} />
-              </div>
+              <Product
+                key={item.id}
+                item={item}
+                setProduct={setProduct}
+                selected={product && product.id === item.id}
+              />
             )
           })}
       </div>

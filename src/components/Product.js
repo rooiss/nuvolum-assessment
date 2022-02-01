@@ -1,6 +1,6 @@
 import classes from './Product.module.scss'
 
-export const Product = ({ item, setProduct }) => {
+export const Product = ({ item, setProduct, setOpen, open, selected }) => {
   const productHandler = () => {
     setProduct(item)
   }
@@ -16,7 +16,12 @@ export const Product = ({ item, setProduct }) => {
       <h4 className={classes.itemTitle} onClick={productHandler}>
         {item.title}
       </h4>
-      <i className={classes.chevron} onClick={productHandler} />
+      <div className={classes.chevronCircle}>
+        <div
+          className={selected ? classes.chevronRight : classes.chevronLeft}
+          onClick={productHandler}
+        />
+      </div>
     </div>
   )
 }

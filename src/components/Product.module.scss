@@ -5,40 +5,43 @@
 .item {
   display: flex;
   align-items: center;
-  max-width: 500px;
+  min-width: 500px;
   justify-content: space-around;
   margin: 32px 0px;
 }
-.chevron {
+
+@mixin chevron {
   @include pointer-hover();
-  box-sizing: border-box;
-  position: relative;
-  display: block;
-  transform: scale(var(--ggs, 1));
-  width: 24px;
-  height: 22px;
-  border: 2px solid;
-  border-radius: 100px;
+  width: 20px;
+  height: 20px;
+  border-top: 3px solid #62d9d3;
+  border-right: 3px solid #62d9d3;
+  transition: ease-in-out 0.4s;
+  will-change: transform;
 }
-.chevron::after {
-  content: '';
-  @include pointer-hover();
-  display: block;
-  box-sizing: border-box;
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-bottom: 2px solid;
-  border-left: 2px solid;
+
+.chevronLeft {
+  @include chevron();
+  transform: rotate(225deg);
+}
+
+.chevronRight {
+  @include chevron();
   transform: rotate(45deg);
-  left: 7px;
-  top: 6px;
 }
+.chevronCircle {
+  border-radius: 50%;
+  border: 3px solid #62d9d3;
+  width: 40px;
+  height: 40px;
+}
+
 .itemImage {
   @include pointer-hover();
   height: auto;
   width: auto;
-  max-height: 300px;
+  // max-height: 300px;
+  max-width: 150px;
 }
 .itemTitle {
   @include pointer-hover();
