@@ -4,8 +4,6 @@ export const productsCache = {}
 
 const productsContext = createContext({})
 
-console.log('productsCache', productsCache)
-
 export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState(null)
   const [productsLoading, setProductsLoading] = useState(null)

@@ -1,8 +1,16 @@
-.product {
+@mixin pointer-hover {
+  cursor: pointer;
+}
+
+.item {
   display: flex;
   align-items: center;
+  max-width: 500px;
+  justify-content: space-around;
+  margin: 32px 0px;
 }
 .chevron {
+  @include pointer-hover();
   box-sizing: border-box;
   position: relative;
   display: block;
@@ -14,6 +22,7 @@
 }
 .chevron::after {
   content: '';
+  @include pointer-hover();
   display: block;
   box-sizing: border-box;
   position: absolute;
@@ -25,11 +34,13 @@
   left: 7px;
   top: 6px;
 }
-.productImage {
+.itemImage {
+  @include pointer-hover();
   height: auto;
   width: auto;
   max-height: 300px;
 }
-.productTitle {
-  max-width: min-content;
+.itemTitle {
+  @include pointer-hover();
+  max-width: 200px;
 }
