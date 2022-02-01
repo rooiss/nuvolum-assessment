@@ -6,7 +6,7 @@ export const Products = () => {
   const { products, productsLoading, productsError } = useProducts()
 
   return (
-    <>
+    <div>
       {productsLoading && <>Loading...</>}
       {productsError && <>{productsError}</>}
       {products &&
@@ -17,6 +17,6 @@ export const Products = () => {
             </div>
           )
         })}
-    </>
+    </div>
   )
 }

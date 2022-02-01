@@ -1,6 +1,10 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
+export const productsCache = {}
+
 const productsContext = createContext({})
+
+console.log('productsCache', productsCache)
 
 export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState(null)
@@ -18,6 +22,11 @@ export const ProductsProvider = ({ children }) => {
         return
       }
       res.json().then((data) => {
+        data.forEach((item) => {
+          if (!productsCache[item.id]) {
+            productsCache[item.id] = item
+          }
+        })
         setProducts(data)
         setProductsLoading(false)
       })

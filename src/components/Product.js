@@ -1,13 +1,11 @@
-import './product.scss'
+import classes from './Product.module.scss'
 
 export const Product = ({ product }) => {
   return (
-    <div className="product">
-      <img src={product.image} alt="product" className="productImage" />
-      <h3>{product.title}</h3>
-      {/* <button> */}
-      <i className="chevron" />
-      {/* </button> */}
+    <div className={classes.product}>
+      <img src={product.image} alt="product" className={classes.productImage} />
+      <h4 className={classes.productTitle}>{product.title}</h4>
+      <i className={classes.chevron} />
     </div>
   )
 }

@@ -27,5 +27,9 @@
 }
 .productImage {
   height: auto;
-  width: 400px;
+  width: auto;
+  max-height: 300px;
+}
+.productTitle {
+  max-width: min-content;
 }
