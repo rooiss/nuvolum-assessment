@@ -8,7 +8,7 @@ export const Products = () => {
   return (
     <>
       {productsLoading && <>Loading...</>}
-      {productsError && <>Error Occured</>}
+      {productsError && <>{productsError}</>}
       {products &&
         products.map((product) => {
           return (

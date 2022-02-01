@@ -1,11 +1,13 @@
+import './product.scss'
+
 export const Product = ({ product }) => {
   return (
-    <>
-      <div>
-        <img src={product.image} alt="product" />
-        <h3>{product.title}</h3>
-        <button>Chevron Icon here</button>
-      </div>
-    </>
+    <div className="product">
+      <img src={product.image} alt="product" className="productImage" />
+      <h3>{product.title}</h3>
+      {/* <button> */}
+      <i className="chevron" />
+      {/* </button> */}
+    </div>
   )
 }

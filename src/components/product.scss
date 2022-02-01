@@ -1,0 +1,31 @@
+.product {
+  display: flex;
+  align-items: center;
+}
+.chevron {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 24px;
+  height: 22px;
+  border: 2px solid;
+  border-radius: 100px;
+}
+.chevron::after {
+  content: '';
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  transform: rotate(45deg);
+  left: 7px;
+  top: 6px;
+}
+.productImage {
+  height: auto;
+  width: 400px;
+}
