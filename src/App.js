@@ -1,11 +1,14 @@
 import './App.css'
 import { Main } from './components/Main'
+import { ProductsProvider } from './providers/ProductsProvider'
 
 function App() {
   return (
-    <div className="App">
-      <Main />
-    </div>
+    <ProductsProvider>
+      <div className="App">
+        <Main />
+      </div>
+    </ProductsProvider>
   )
 }
 
