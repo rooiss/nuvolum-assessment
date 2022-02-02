@@ -1,7 +1,9 @@
 .productsContainer {
   display: flex;
   position: relative;
-  margin: 64px 0px;
+  width: 100%;
+  max-width: 1200px;
+  // margin: 64px 0px;
 }
 
 .productsList {
@@ -22,7 +24,7 @@
   background: #fafafa;
   display: flex;
   flex-direction: column;
-  padding: 32px;
+  padding: 16px;
 }
 @media only screen and (max-width: 549px) {
   .productsContainer {

@@ -31,6 +31,7 @@ export const Products = () => {
       </div>
       {selected ? (
         <div className={classes.productDetail}>
+          <div className="backButton" onClick={() => setSelected(null)} />
           <ProductDetails product={product} />
         </div>
       ) : null}

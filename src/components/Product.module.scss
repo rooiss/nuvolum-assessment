@@ -43,9 +43,13 @@
   border-right: 0.5em solid white;
 }
 .item {
+  padding: 10px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border: 1px solid #ccc;
+  position: relative;
+  z-index: 1;
   // background: #aaa4;
 }
 .item.selected {
@@ -53,9 +57,11 @@
   border-right: none;
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 .imageAndDescription {
   display: block;
+  margin-left: 2rem;
 }
 
 .chevronOpen {
@@ -72,7 +78,6 @@
 }
 .chevronClose {
   @include chevron-close();
-  margin-right: 1.5em;
   transform: rotate(225deg);
 }
 .chevronClose:after {

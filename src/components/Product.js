@@ -13,7 +13,7 @@ export const Product = ({ item, setProduct, selected, setSelected }) => {
   }
 
   return (
-    <div className={cn(classes.item, { selected })}>
+    <div className={cn(classes.item, { [classes.selected]: selected })}>
       <div className={classes.imageAndDescription}>
         <img
           src={item.image}
