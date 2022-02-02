@@ -1,12 +1,15 @@
+import { useState } from 'react'
 import { useProduct } from '../providers/ProductProvider'
 import { useProducts } from '../providers/ProductsProvider'
 import { Product } from './Product'
-import classes from './Products.module.scss'
 import { ProductDetails } from './ProductDetails'
+import classes from './Products.module.scss'
 
 export const Products = () => {
   const { products, productsLoading, productsError } = useProducts()
   const { product, setProduct } = useProduct()
+
+  const [selected, setSelected] = useState(null)
 
   return (
     <div className={classes.productsContainer}>
@@ -20,14 +23,17 @@ export const Products = () => {
                 key={item.id}
                 item={item}
                 setProduct={setProduct}
-                selected={product && product.id === item.id}
+                setSelected={setSelected}
+                selected={selected === item.id}
               />
             )
           })}
       </div>
-      <div className={classes.productDetail}>
-        {product && <ProductDetails product={product} />}
-      </div>
+      {selected ? (
+        <div className={classes.productDetail}>
+          <ProductDetails product={product} />
+        </div>
+      ) : null}
     </div>
   )
 }
