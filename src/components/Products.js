@@ -10,6 +10,7 @@ export const Products = () => {
   const { products, productsLoading, productsError } = useProducts()
   const { product, setProduct } = useProduct()
 
+  // selected state is to "open" the product details
   const [selected, setSelected] = useState(null)
 
   return (

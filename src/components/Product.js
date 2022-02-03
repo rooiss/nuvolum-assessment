@@ -2,6 +2,8 @@ import classes from './Product.module.scss'
 import cn from 'clsx'
 
 export const Product = ({ item, setProduct, selected, setSelected }) => {
+  // product and item were named differently for the provider and the mapped items
+  // in the event that there were to be more items/for scalability
   const productHandler = () => {
     if (selected) {
       setSelected(null)
