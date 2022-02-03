@@ -4,6 +4,7 @@ import { useProducts } from '../providers/ProductsProvider'
 import { Product } from './Product'
 import { ProductDetails } from './ProductDetails'
 import classes from './Products.module.scss'
+import cn from 'clsx'
 
 export const Products = () => {
   const { products, productsLoading, productsError } = useProducts()
@@ -12,7 +13,11 @@ export const Products = () => {
   const [selected, setSelected] = useState(null)
 
   return (
-    <div className={classes.productsContainer}>
+    <div
+      className={cn(classes.productsContainer, {
+        [classes.showDetails]: Boolean(selected),
+      })}
+    >
       <div className={classes.productsList}>
         {productsLoading && <>Loading...</>}
         {productsError && <>{productsError}</>}
@@ -31,7 +36,10 @@ export const Products = () => {
       </div>
       {selected ? (
         <div className={classes.productDetail}>
-          <div className="backButton" onClick={() => setSelected(null)} />
+          <div
+            className={classes.backButton}
+            onClick={() => setSelected(null)}
+          />
           <ProductDetails product={product} />
         </div>
       ) : null}
