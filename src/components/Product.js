@@ -17,6 +17,7 @@ export const Product = ({ item, setProduct, selected, setSelected }) => {
       <div className={classes.imageAndDescription}>
         <img
           src={item.image}
+          sizes="(max-width: 150px)"
           alt="item"
           className={classes.itemImage}
           onClick={productHandler}
