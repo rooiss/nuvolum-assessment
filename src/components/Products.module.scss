@@ -23,14 +23,13 @@
   padding: 7px;
 }
 
+// override in media query
 .backButton {
-  /* override in media query */
   display: none;
   position: absolute;
   top: 10px;
   left: 10px;
   cursor: pointer;
-  // display: inline-block;
   width: 2em;
   height: 2em;
   border: 0.5em solid #62d9d3;

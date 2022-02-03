@@ -1,5 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
+// created a cache for faster loading and in the event
+// a user would be going to different parts of the app
 export const productsCache = {}
 
 const productsContext = createContext({})
